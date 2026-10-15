@@ -1,0 +1,28 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "pytest: smoke",
+      "type": "debugpy",
+      "request": "launch",
+      "args": [
+        "pytest",
+        "-m",
+        "smoke",
+        "--headed"
+      ],
+      "console": "integratedTerminal",
+      "program": "${workspaceFolder}/run_tests.py"
+    },
+    {
+      "name": "Behave",
+      "type": "debugpy",
+      "request": "launch",
+      "console": "integratedTerminal",
+      "program": "${workspaceFolder}/run_tests.py",
+      "args": [
+        "behave"
+      ]
+    }
+  ]
+}

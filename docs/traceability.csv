@@ -1,0 +1,131 @@
+﻿caso,descripcion,estado,prueba,observaciones
+LOG-01,Pantalla login,Pendiente,,No implementado; no se cuenta como aprobado.
+LOG-02,Login válido,Automatizado,tests/test_shop.py::test_LOG_02_login,
+LOG-03,Usuario bloqueado,Automatizado,tests/test_shop.py::test_LOG_03_to_09_invalid_login[locked],
+LOG-04,Ambos campos vacíos,Automatizado,tests/test_shop.py::test_LOG_03_to_09_invalid_login[empty],
+LOG-05,Contraseña vacía,Automatizado,tests/test_shop.py::test_LOG_03_to_09_invalid_login[missing-password],
+LOG-06,Usuario vacío,Automatizado,tests/test_shop.py::test_LOG_03_to_09_invalid_login[missing-user],
+LOG-07,Usuario inexistente,Automatizado,tests/test_shop.py::test_LOG_03_to_09_invalid_login[unknown-user],
+LOG-08,Contraseña incorrecta,Automatizado,tests/test_shop.py::test_LOG_03_to_09_invalid_login[wrong-password],
+LOG-09,Ambos incorrectos,Automatizado,tests/test_shop.py::test_LOG_03_to_09_invalid_login[both-wrong],
+LOG-10,Mayúsculas usuario,Requiere requisito,,No implementado; no se cuenta como aprobado.
+LOG-11,Mayúsculas contraseña,Pendiente,,No implementado; no se cuenta como aprobado.
+LOG-12,Espacios alrededor,Requiere requisito,,No implementado; no se cuenta como aprobado.
+LOG-13,Solo espacios,Pendiente,,No implementado; no se cuenta como aprobado.
+LOG-14,Longitudes y símbolos,Pendiente,,No implementado; no se cuenta como aprobado.
+LOG-15,Enter login,Pendiente,,No implementado; no se cuenta como aprobado.
+LOG-16,Corregir error,Pendiente,,No implementado; no se cuenta como aprobado.
+LOG-17,Cerrar error,Pendiente,,No implementado; no se cuenta como aprobado.
+LOG-18,Enmascarado y clic repetido,Pendiente,,No implementado; no se cuenta como aprobado.
+SES-01,Catálogo sin sesión,Automatizado,tests/test_shop.py::test_SES_01_to_03_protected_routes,
+SES-02,Carrito sin sesión,Automatizado,tests/test_shop.py::test_SES_01_to_03_protected_routes,
+SES-03,Checkout sin sesión,Automatizado,tests/test_shop.py::test_SES_01_to_03_protected_routes,
+SES-04,Logout,Automatizado,tests/test_shop.py::test_SES_04_to_06_logout,
+SES-05,Atrás tras logout,Pendiente,,No implementado; no se cuenta como aprobado.
+SES-06,Ruta tras logout,Automatizado,tests/test_shop.py::test_SES_04_to_06_logout,
+SES-07,Recargar sesión,Requiere requisito,,No implementado; no se cuenta como aprobado.
+SES-08,Historial navegación,Pendiente,,No implementado; no se cuenta como aprobado.
+SES-09,Otra pestaña,Requiere requisito,,No implementado; no se cuenta como aprobado.
+SES-10,Cambio de usuario,Requiere requisito,,No implementado; no se cuenta como aprobado.
+SES-11,Reabrir navegador,Requiere requisito,,No implementado; no se cuenta como aprobado.
+SES-12,Ruta inexistente,Pendiente,,No implementado; no se cuenta como aprobado.
+CAT-01,Seis productos sin duplicados,Automatizado,tests/test_shop.py::test_CAT_05_to_08_sort,Conjunto de nombres y cantidad de referencia; espera desacoplada de página cargada.
+CAT-02,Datos por producto,Parcial,tests/test_shop.py::test_CAT_02_DET_01_to_07_product,Valida nombre y precio; faltan imagen y descripción.
+CAT-03,Carga de imágenes,Pendiente,,No implementado; no se cuenta como aprobado.
+CAT-04,Precios de referencia,Automatizado,tests/test_shop.py::test_CAT_02_DET_01_to_07_product,
+CAT-05,Orden A-Z,Automatizado,tests/test_shop.py::test_CAT_05_to_08_sort,
+CAT-06,Orden Z-A,Automatizado,tests/test_shop.py::test_CAT_05_to_08_sort,
+CAT-07,Precio ascendente,Automatizado,tests/test_shop.py::test_CAT_05_to_08_sort,
+CAT-08,Precio descendente,Automatizado,tests/test_shop.py::test_CAT_05_to_08_sort,
+CAT-09,Empates de precio,Parcial,tests/test_shop.py::test_CAT_05_to_08_sort,Empates no se duplican; no se exige orden secundario sin requisito.
+CAT-10,Cambiar orden varias veces,Pendiente,,No implementado; no se cuenta como aprobado.
+CAT-11,Ordenar con carrito,Pendiente,,No implementado; no se cuenta como aprobado.
+CAT-12,Conservar orden al volver,Requiere requisito,,No implementado; no se cuenta como aprobado.
+DET-01,Abrir por nombre,Automatizado,tests/test_shop.py::test_CAT_02_DET_01_to_07_product,
+DET-02,Abrir por imagen,Pendiente,,No implementado; no se cuenta como aprobado.
+DET-03,Datos coincidentes,Parcial,tests/test_shop.py::test_CAT_02_DET_01_to_07_product,Nombre y precio; faltan imagen y descripción.
+DET-04,Volver al catálogo,Pendiente,,No implementado; no se cuenta como aprobado.
+DET-05,Agregar desde detalle,Automatizado,tests/test_shop.py::test_CAT_02_DET_01_to_07_product,
+DET-06,Quitar desde detalle,Automatizado,tests/test_shop.py::test_CAT_02_DET_01_to_07_product,
+DET-07,Estado agregado,Automatizado,tests/test_shop.py::test_CAT_02_DET_01_to_07_product,
+DET-08,ID inválido,Pendiente,,No implementado; no se cuenta como aprobado.
+CAR-01,Carrito vacío,Parcial,tests/test_shop.py::test_CAR_01_to_08_all_products_and_remove,Vacío comprobado tras eliminar todos; falta comprobar apertura inicial vacía.
+CAR-02,Agregar un producto,Automatizado,tests/test_shop.py::test_CAT_02_DET_01_to_07_product,
+CAR-03,Agregar varios,Automatizado,tests/test_shop.py::test_FIN_01_to_13_purchase,
+CAR-04,Agregar seis,Automatizado,tests/test_shop.py::test_CAR_01_to_08_all_products_and_remove,Vacío comprobado después de eliminar; contador al agregar todos y eliminar último.
+CAR-05,Contador coherente,Parcial,tests/test_shop.py::test_CAR_01_to_08_all_products_and_remove,Contador al agregar todos y quitar último; falta comprobar cada transición intermedia.
+CAR-06,Datos y cantidad,Parcial,tests/test_shop.py::test_CAT_02_DET_01_to_07_product,"Nombre e identidad comprobados; faltan cantidad, descripción y precio del carrito."
+CAR-07,Quitar seleccionado,Parcial,tests/test_shop.py::test_CAR_01_to_08_all_products_and_remove,Eliminación secuencial comprobada; falta quitar un artículo intermedio y verificar los restantes.
+CAR-08,Quitar último,Automatizado,tests/test_shop.py::test_CAR_01_to_08_all_products_and_remove,Vacío comprobado después de eliminar; contador al agregar todos y eliminar último.
+CAR-09,Quitar desde catálogo,Pendiente,,No implementado; no se cuenta como aprobado.
+CAR-10,Volver a agregar,Automatizado,tests/test_shop.py::test_CAT_02_DET_01_to_07_product,
+CAR-11,Clics rápidos,Pendiente,,No implementado; no se cuenta como aprobado.
+CAR-12,Continue Shopping,Automatizado,tests/test_shop.py::test_CAR_12_14_persistence,
+CAR-13,Detalle desde carrito,Pendiente,,No implementado; no se cuenta como aprobado.
+CAR-14,Recargar carrito,Automatizado,tests/test_shop.py::test_CAR_12_14_persistence,
+CAR-15,Checkout con artículos,Automatizado,tests/test_shop.py::test_FIN_01_to_13_purchase,
+CAR-16,Checkout vacío,Requiere requisito,,No implementado; no se cuenta como aprobado.
+INF-01,Información válida,Automatizado,tests/test_shop.py::test_FIN_01_to_13_purchase,
+INF-02,Tres vacíos,Automatizado,tests/test_shop.py::test_INF_02_to_05_required,
+INF-03,Nombre vacío,Automatizado,tests/test_shop.py::test_INF_02_to_05_required,
+INF-04,Apellido vacío,Automatizado,tests/test_shop.py::test_INF_02_to_05_required,
+INF-05,Código vacío,Automatizado,tests/test_shop.py::test_INF_02_to_05_required,
+INF-06,Dos campos vacíos,Pendiente,,No implementado; no se cuenta como aprobado.
+INF-07,Solo espacios,Requiere requisito,,No implementado; no se cuenta como aprobado.
+INF-08,Unicode,Parcial,tests/test_shop.py::test_FIN_01_to_13_purchase,Datos Unicode y cero inicial usados; falta verificar preservación explícita.
+INF-09,Nombres compuestos,Requiere requisito,,No implementado; no se cuenta como aprobado.
+INF-10,Símbolos en nombres,Requiere requisito,,No implementado; no se cuenta como aprobado.
+INF-11,Cero inicial postal,Parcial,tests/test_shop.py::test_FIN_01_to_13_purchase,Datos Unicode y cero inicial usados; falta verificar preservación explícita.
+INF-12,Postal alfanumérico,Requiere requisito,,No implementado; no se cuenta como aprobado.
+INF-13,Longitudes límite,Requiere requisito,,No implementado; no se cuenta como aprobado.
+INF-14,Corregir error,Pendiente,,No implementado; no se cuenta como aprobado.
+INF-15,Cancelar información,Pendiente,,No implementado; no se cuenta como aprobado.
+INF-16,Enter y clic repetido,Pendiente,,No implementado; no se cuenta como aprobado.
+FIN-01,Resumen un artículo,Automatizado,tests/test_shop.py::test_FIN_01_to_13_purchase,Tasa esperada del dataset; confirmar regla con producto antes de otro entorno.
+FIN-02,Resumen varios,Automatizado,tests/test_shop.py::test_FIN_01_to_13_purchase,Tasa esperada del dataset; confirmar regla con producto antes de otro entorno.
+FIN-03,Subtotal,Automatizado,tests/test_shop.py::test_FIN_01_to_13_purchase,Tasa esperada del dataset; confirmar regla con producto antes de otro entorno.
+FIN-04,Impuesto,Automatizado,tests/test_shop.py::test_FIN_01_to_13_purchase,Tasa esperada del dataset; confirmar regla con producto antes de otro entorno.
+FIN-05,Total,Automatizado,tests/test_shop.py::test_FIN_01_to_13_purchase,Tasa esperada del dataset; confirmar regla con producto antes de otro entorno.
+FIN-06,Ejemplo Backpack,Automatizado,tests/test_shop.py::test_FIN_01_to_13_purchase,Tasa esperada del dataset; confirmar regla con producto antes de otro entorno.
+FIN-07,Redondeo y seis artículos,Automatizado,tests/test_shop.py::test_FIN_01_to_13_purchase,Tasa esperada del dataset; confirmar regla con producto antes de otro entorno.
+FIN-08,Pago y envío,Pendiente,,No implementado; no se cuenta como aprobado.
+FIN-09,Cancelar resumen,Pendiente,,No implementado; no se cuenta como aprobado.
+FIN-10,Finalizar,Automatizado,tests/test_shop.py::test_FIN_01_to_13_purchase,Tasa esperada del dataset; confirmar regla con producto antes de otro entorno.
+FIN-11,Carrito limpio,Parcial,tests/test_shop.py::test_FIN_01_to_13_purchase,Contador vacío comprobado; falta verificar explícitamente cero filas del carrito tras finalizar.
+FIN-12,Finish repetido,Pendiente,,No implementado; no se cuenta como aprobado.
+FIN-13,Volver y nueva compra,Parcial,tests/test_shop.py::test_FIN_01_to_13_purchase,Retorno al catálogo; falta una segunda compra en el mismo contexto.
+FIN-14,Saltos de ruta e historial,Requiere requisito,,No implementado; no se cuenta como aprobado.
+MEN-01,Abrir cerrar menú,Pendiente,,No implementado; no se cuenta como aprobado.
+MEN-02,All Items,Pendiente,,No implementado; no se cuenta como aprobado.
+MEN-03,About,Pendiente,,No implementado; no se cuenta como aprobado.
+MEN-04,Reset App State,Requiere requisito,,No implementado; no se cuenta como aprobado.
+MEN-05,Redes sociales,Pendiente,,No implementado; no se cuenta como aprobado.
+MEN-06,Pie legal,Pendiente,,No implementado; no se cuenta como aprobado.
+DYN-01,Expandir submenú,Pendiente,,No implementado; no se cuenta como aprobado.
+DYN-02,Abrir modos,Pendiente,,No implementado; no se cuenta como aprobado.
+DYN-03,Lazy Load,Pendiente,,No implementado; no se cuenta como aprobado.
+DYN-04,Fin de lista,Pendiente,,No implementado; no se cuenta como aprobado.
+DYN-05,Spinner,Pendiente,,No implementado; no se cuenta como aprobado.
+DYN-06,Fallo de carga,Pendiente,,No implementado; no se cuenta como aprobado.
+DYN-07,Slider,Pendiente,,No implementado; no se cuenta como aprobado.
+DYN-08,Carrito entre modos,Pendiente,,No implementado; no se cuenta como aprobado.
+USR-01,Estándar referencia,Automatizado,tests/test_shop.py::test_FIN_01_to_13_purchase,
+USR-02,Usuario bloqueado,Automatizado,tests/test_shop.py::test_LOG_03_to_09_invalid_login[locked],
+USR-03,Problem user,Pendiente,,No implementado; no se cuenta como aprobado.
+USR-04,Performance user,Pendiente,,No implementado; no se cuenta como aprobado.
+USR-05,Error user,Pendiente,,No implementado; no se cuenta como aprobado.
+USR-06,Visual user,Manual pendiente,,No implementado; no se cuenta como aprobado.
+NFR-01,Teclado compra,Pendiente,,No implementado; no se cuenta como aprobado.
+NFR-02,Orden foco,Pendiente,,No implementado; no se cuenta como aprobado.
+NFR-03,Lector pantalla,Manual pendiente,,No implementado; no se cuenta como aprobado.
+NFR-04,Anuncio errores,Manual pendiente,,No implementado; no se cuenta como aprobado.
+NFR-05,Contraste y zoom,Manual pendiente,,No implementado; no se cuenta como aprobado.
+NFR-06,Navegadores,Parcial,tests/test_shop.py::test_FIN_01_to_13_purchase,Matriz Chromium/Firefox/WebKit; WebKit no equivale a Safari real ni prueba todas las versiones.
+NFR-07,Móvil y orientación,Parcial,tests/test_shop.py::test_FIN_01_to_13_purchase,"Viewport 390x844; faltan orientación, dispositivos reales y evaluación visual."
+NFR-08,Tiempos,Requiere requisito,,No implementado; no se cuenta como aprobado.
+NFR-09,Red y recuperación,Pendiente,,No implementado; no se cuenta como aprobado.
+NFR-10,Recursos y consola,Pendiente,,No implementado; no se cuenta como aprobado.
+SEC-01,Secretos en URL logs,Pendiente,,No implementado; no se cuenta como aprobado.
+SEC-02,HTML scripts,Pendiente,,No implementado; no se cuenta como aprobado.
+SEC-03,Inyección,Pendiente,,No implementado; no se cuenta como aprobado.
+SEC-04,Integridad precio estado,Requiere requisito,,No implementado; no se cuenta como aprobado.
