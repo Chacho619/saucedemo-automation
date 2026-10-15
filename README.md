@@ -95,6 +95,7 @@ Se comprueban configuración inválida, prioridad CLI/entorno, cálculo y redond
 - `tests/test_page_contracts.py`: verificaciones de páginas sobre HTML local.
 - `features/`: Gherkin en español y pasos que comparten POM.
 - `docs/traceability.csv`: cobertura de los 130 casos originales.
+- `docs/test-strategy.md`: prioridades de riesgo y criterios para aprobar/bloquear cambios y liberaciones.
 - `.github/workflows/tests.yml`: calidad y matriz de ejecución para GitHub Actions.
 
 pytest y Behave son ejecutores independientes. No se deben ejecutar los steps de Behave desde pytest. Los contextos nuevos aíslan cookies y almacenamiento; cada trabajador pytest tiene su navegador. La demo mantiene su carrito por contexto. Para otra aplicación con estado en servidor se requieren cuentas/datos exclusivos por trabajador antes de habilitar paralelismo. Behave se ejecuta secuencialmente dentro de cada combinación de CI.

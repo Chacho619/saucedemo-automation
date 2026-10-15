@@ -39,6 +39,9 @@ def test_ci_has_browser_viewport_matrix_and_restricted_reports():
     )
     assert "pull_request" in workflow["on"]
     assert workflow["permissions"] == {"contents": "read"}
+    quality = workflow["jobs"]["quality"]
+    assert any("playwright install --with-deps chromium" in step.get("run", "") for step in quality["steps"])
+    assert any("pytest -m 'unit or component'" in step.get("run", "") for step in quality["steps"])
     e2e = workflow["jobs"]["e2e"]
     assert e2e["if"] == "github.event_name != 'pull_request'"
     matrix = e2e["strategy"]["matrix"]["include"]

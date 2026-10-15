@@ -12,7 +12,7 @@ concurrency:
 jobs:
   quality:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
@@ -20,9 +20,10 @@ jobs:
           python-version: '3.12'
           cache: pip
       - run: python -m pip install -r requirements-lock.txt
+      - run: python -m playwright install --with-deps chromium
       - run: python -m ruff check .
       - run: python -m ruff format --check .
-      - run: python -m pytest -m unit --junitxml=artifacts/unit.xml
+      - run: python -m pytest -m 'unit or component' --junitxml=artifacts/quality.xml
       - uses: actions/upload-artifact@v5
         if: ${{ !cancelled() }}
         with:
